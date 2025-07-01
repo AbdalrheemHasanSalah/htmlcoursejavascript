@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript HTML DOM</h2>
+
+<p id="intro">Finding HTML Elements by Id</p>
+<p>This example demonstrates the <b>getElementsById</b> method.</p>
+
+<p id="demo"></p>
+
+<script>
+const element = document.getElementById("intro");
+
+document.getElementById("demo").innerHTML = 
+"The text from the intro paragraph is: " + element.innerHTML;
+
+</script>
+
+<h2>JavaScript HTML DOM</h2>
+
+<p>Finding HTML Elements by Tag Name.</p>
+<p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+
+<p id="demo"></p>
+
+<script>
+const element = document.getElementsByTagName("p");
+
+document.getElementById("demo").innerHTML = 'The text in first paragraph (index 0) is: ' + element[0].innerHTML;
+
+</script>
+
+
+
+
+
+<h2>JavaScript HTML DOM</h2>
+
+<div id="main">
+<p>Finding HTML Elements by Tag Name</p>
+<p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+</div>
+
+<p id="demo"></p>
+
+<script>
+const x = document.getElementById("main");
+const y = x.getElementsByTagName("p");
+
+document.getElementById("demo").innerHTML = 
+'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML;
+
+</script>
+
+
+
+
+<h2>JavaScript HTML DOM</h2>
+
+<p>Finding HTML Elements by Class Name.</p>
+<p class="intro">Hello World!</p>
+<p class="intro">This example demonstrates the <b>getElementsByClassName</b> method.</p>
+
+<p id="demo"></p>
+
+<script>
+const x = document.getElementsByClassName("intro");
+document.getElementById("demo").innerHTML = 
+'The first paragraph (index 0) with class="intro" is: ' + x[0].innerHTML;
+</script>
+
+
+
+
+
+
+
+
+<h2>JavaScript HTML DOM</h2>
+
+<p>Finding HTML Elements by Query Selector</p>
+<p class="intro">Hello World!.</p>
+<p class="intro">This example demonstrates the <b>querySelectorAll</b> method.</p>
+
+<p id="demo"></p>
+
+<script>
+const x = document.querySelectorAll("p.intro");
+document.getElementById("demo").innerHTML = 
+'The first paragraph (index 0) with class="intro" is: ' + x[0].innerHTML;
+</script>
+
+
+
+
+
+
+
+<h2>JavaScript HTML DOM</h2>
+<p>Finding HTML Elements Using <b>document.forms</b>.</p>
+
+<form id="frm1" action="/action_page.php">
+  First name: <input type="text" name="fname" value="Donald"><br>
+  Last name: <input type="text" name="lname" value="Duck"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<p>These are the values of each element in the form:</p>
+
+<p id="demo"></p>
+
+<script>
+const x = document.forms["frm1"];
+let text = "";
+for (let i = 0; i < x.length ;i++) {
+  text += x.elements[i].value + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+
+
+
+
+
+<!--dom form--->
+
+<script>
+function validateForm() {
+  let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+</script>
+</head>
+<body>
+
+<h2>JavaScript Validation</h2>
+
+<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+  Name: <input type="text" name="fname">
+  <input type="submit" value="Submit">
+</form>
+
+
+
+
+
+
+<script>
+function validateForm() {
+  let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+</script>
+
+
+
+
+
+
+<h2>JavaScript Validation</h2>
+
+<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+  Name: <input type="text" name="fname">
+  <input type="submit" value="Submit">
+</form>
+
+
+
+
+
+
+
+<h2>JavaScript HTML DOM</h2>
+<p>Changing the HTML style:</p>
+
+
+<p id="p1">Hello World!</p>
+<p id="p2">Hello World!</p>
+
+<script>
+document.getElementById("p2").style.color = "blue";
+document.getElementById("p2").style.fontFamily = "Arial";
+document.getElementById("p2").style.fontSize = "larger";
+</script>
+
+<h1 id="id1">My Heading 1</h1>
+
+<button type="button" 
+onclick="document.getElementById('id1').style.color = 'red'">
+Click Me!</button>
+
+
+
+</body>
+</html>
